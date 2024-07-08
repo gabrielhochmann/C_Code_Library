@@ -13,12 +13,11 @@
 
 int mult_rec(int n1, int n2)
 {
-    if (n1 == 0)
+    if (n1 > 0)
     {
-        return 0;
+        return n2 + mult_rec(n1 - 1, n2);
     }
-
-    return n2 + mult_rec(n1 - 1, n2);
+        return 0;
 }
 
 int main()

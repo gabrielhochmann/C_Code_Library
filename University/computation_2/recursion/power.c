@@ -10,14 +10,14 @@
 
 #include <stdio.h>
 
-int powerCalculator(int k, int n)
+int power(int k, int n)
 {
-    if (n == 0)
+    if (n > 0)
     {
-        return 1;
+        return k * power(k, n - 1);
     };
 
-    return k * powerCalculator(k, n - 1);
+    return 1;
 }
 
 int main()
@@ -26,7 +26,7 @@ int main()
     printf("Input two numbers (both greater than 0):\n");
     scanf("%d %d", &k, &n);
 
-    printf("%d raised to the power of %d is: %d\n", k, n, powerCalculator(k, n));
+    printf("%d raised to the power of %d is: %d\n", k, n, power(k, n));
 
     return 0;
 }

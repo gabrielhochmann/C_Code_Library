@@ -2,31 +2,35 @@
  ========================================================================================
  Author      : Arkzesru (Gabriel Hochmann Alves);
  Date        : July 02, 2024;
- Name        : Summation Of Numbers;
+ Name        : Fibonacci Sequence;
  Source      : (20240627, Aula2-3.pptx) - Teresinha Arnauts Hachisuca
- Description : A C Program that calculates the summation of numbers 1 to N.
+ Description : C Program that calculates and returns the Nth term of the Fibonacci
+               sequence.
  ========================================================================================
  */
 
 #include <stdio.h>
 
-int summation(int n)
+int fibonacci(unsigned int N)
 {
-    if (n <= 0)
+    if (N < 2)
     {
-        return 0;
-    };
+        return N;
+    }
+    else if (N > 1)
+    {
+        return fibonacci(N - 1) + fibonacci(N-2);
+    }
 
-    return n + summation(n-1);
+    return 0;
 }
 
 int main()
 {
     int n;
-    printf("Input a number:\n");
+    printf("Input the Nth term of the Fibonacci Sequence:\n");
     scanf("%d", &n);
 
-    printf("Summation from 1 to %d is: %d\n", n, summation(n));
-
+    printf("Nth term is: [%d]", fibonacci(n));
     return 0;
 }
