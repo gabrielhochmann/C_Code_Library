@@ -127,7 +127,7 @@ int isPalindrome(char *str, int len)
     return isPalindrome(str + 1, len - 2);
 }
 
-char *powerSet(char *orig, char *conj)
+char *powerSet(char *orig, int len, char *conj)
 {
     *orig = *conj;
 
@@ -136,8 +136,5 @@ char *powerSet(char *orig, char *conj)
 
 int main()
 {
-
-    // printf("%d\n", isPalindrome(str));
-
     return 0;
 }
