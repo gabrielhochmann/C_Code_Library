@@ -7,8 +7,14 @@
  Description : A C source file that implements recursive functions.
  ========================================================================================
  */
+
 #include "recursion.h"
 
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+// Function to print numbers in ascending order recursively
 void printNumbersAscending(int num)
 {
     if (num > 1)
@@ -18,6 +24,7 @@ void printNumbersAscending(int num)
     }
 }
 
+// Function to print numbers in descending order recursively
 void printNumbersDescending(int num)
 {
     if (num > 1)
@@ -27,6 +34,7 @@ void printNumbersDescending(int num)
     }
 }
 
+// Function to calculate summation recursively
 int summation(int n)
 {
     if (n == 0)
@@ -37,6 +45,7 @@ int summation(int n)
     return n + summation(n - 1);
 }
 
+// Function to calculate factorial recursively
 int factorial(unsigned int n)
 {
     if (n == 0)
@@ -47,6 +56,7 @@ int factorial(unsigned int n)
     return n * factorial(n - 1);
 }
 
+// Function to calculate super factorial recursively
 int superFactorial(unsigned int n)
 {
     if (n == 0)
@@ -57,6 +67,7 @@ int superFactorial(unsigned int n)
     return factorial(n) * superFactorial(n - 1);
 }
 
+// Function to calculate power recursively
 unsigned int power(unsigned int base, unsigned int exp)
 {
     if (exp == 0)
@@ -67,6 +78,7 @@ unsigned int power(unsigned int base, unsigned int exp)
     return base * power(base, exp - 1);
 }
 
+// Function to calculate exponential factorial recursively
 int exponentialFactorial(unsigned int n)
 {
     if (n == 0)
@@ -112,6 +124,7 @@ int catalanNumber_3(unsigned int n) // So so way, correctly computes up to n = 1
     return (2 * (2 * n - 1) * catalanNumber_3(n - 1)) / (n + 1);
 }
 
+// Function to check if a string is palindrome recursively
 int isPalindrome(char *str, int len)
 {
     if (len <= 1)
@@ -127,20 +140,12 @@ int isPalindrome(char *str, int len)
     return isPalindrome(str + 1, len - 2);
 }
 
-char *powerSet(char *orig, int len, char *conj)
-{
-    *orig = *conj;
-
-    len = 1;
-
-    return conj + len;
-}
-
-int revertArrayRecursive(int v[], int start, int end)
+// Function to revert an array recursively
+void revertArrayRecursive(int v[], int start, int end)
 {
     if (start >= end)
     {
-        return 0;
+        return;
     }
 
     int temp = v[end];
@@ -150,22 +155,36 @@ int revertArrayRecursive(int v[], int start, int end)
     return revertArrayRecursive(v, start + 1, end - 1);
 }
 
+// Function to revert an array (wrapper function)
 void revertArray(int v[], int n)
 {
     revertArrayRecursive(v, 0, n - 1);
 }
 
-int main()
+// Function to calculate Ackermann's function recursively
+int ackermann(unsigned int m, unsigned int n)
 {
-    int v[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17};
-    int n = sizeof(v) / sizeof(v[0]);
-
-    revertArray(v, n);
-    
-    for (int i = 0; i < n; i++)
+    if (m == 0)
     {
-        printf("%d\n", v[i]);
+        return n + 1;
+    }
+    else if (n == 0)
+    {
+        return ackermann(m - 1, 1);
+    }
+    else
+    {
+        return ackermann(m - 1, ackermann(m, n - 1));
+    }
+}
+
+// Function to sum digits of a number recursively
+int sumDigits(int n)
+{
+    if (n == 0)
+    {
+        return 0;
     }
 
-    return 0;
+    return (n % 10) + sumDigits(n / 10);
 }
