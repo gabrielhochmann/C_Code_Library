@@ -9,8 +9,8 @@
  ========================================================================================
  */
 
-#ifndef RECURSIVE_OPERATIONS_H
-#define RECURSIVE_OPERATION_H
+#ifndef RECURSIVEFUNCTIONS_H
+#define RECURSIVEFUNCTIONS_H
 
 // Functions for mathematical calculations
 unsigned int fibonacci(unsigned int num);
@@ -30,4 +30,4 @@ int sumBits(unsigned int num);
 int occurrences(unsigned int num, int digit);
 
 
-#endif // RECURSIVE_OPERATION_H
+#endif // RECURSIVEFUNCTIONS_H
