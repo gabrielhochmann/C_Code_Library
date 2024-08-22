@@ -9,8 +9,8 @@
  ========================================================================================
  */
 
-#ifndef RECURSION_H
-#define RECURSION_H
+#ifndef RECURSION_FUNCTIONS_H
+#define RECURSION_FUNCTIONS_H
 
 // Mathematical calculations
 void printNumbersAscending(int num);
@@ -36,4 +36,4 @@ int ackermann(unsigned int m, unsigned int n);
 // Function to sum digits of a number recursively
 int sumDigits(int n);
 
-#endif // RECURSION_H
+#endif // RECURSIVE_FUNCTIONS_H

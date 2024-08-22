@@ -1,20 +1,20 @@
 /*
- ========================================================================================
- Author      : Arkzesru (Gabriel Hochmann Alves)
+ ============================================================================================
+ Author      : Gabriel Hochmann
  Date        : July 02, 2024
- Name        : Recursive Functions Implementation
- Source      : (20240627, Aula2-3.pptx) - Teresinha Arnauts Hachisuca
- Description : A C source file that implements functions for mathematical calculations,
-               array manipulation, digit and bit manipulation, all using recursion.
- ========================================================================================
+ File        : recursive_functions.c
+ Description : A C source file that implements various recursive functions for mathematical
+               calculations, array manipulation, digit and bit manipulation.
+ Source      : Based on material from (20240627, Aula2-3.pptx) - Teresinha Arnauts Hachisuca
+ ============================================================================================
  */
 
-#include "recursiveFunctions.h"
+#include "recursive_functions.h"
 
 /**
  * @brief Calculate the Fibonnaci number at a given position using recursion.
  *
- * @param num The position in the Fibonnaci sequence.
+ * @param num The position in the Fibonnaci sequence (non-negative).
  * @return unsigned int the Fibonnaci number at the given position.
  */
 unsigned int fibonacci(unsigned int num)
@@ -29,10 +29,10 @@ unsigned int fibonacci(unsigned int num)
 
 /**
  * @brief Helper function for digit reversal using recursion.
- * 
- * @param num The number to be reversed.
+ *
+ * @param num The number to be reversed (positive integer).
  * @param rev The reversed number constructed so far.
- * @return int The fully reversed number. 
+ * @return int The fully reversed number.
  */
 int digitReversalRecursive(int num, int rev)
 {
@@ -45,8 +45,8 @@ int digitReversalRecursive(int num, int rev)
 
 /**
  * @brief Reverse the digits of a number.
- * 
- * @param num The number to be reversed.
+ *
+ * @param num The number to be reversed (positive integer).
  * @return int The reversed number.
  */
 int digitReversal(int num)
@@ -56,14 +56,14 @@ int digitReversal(int num)
 
 /**
  * @brief Calculate the sum of elements in an array using recursion.
- * 
+ *
  * @param v The array of integers.
- * @param n The number of elements in the array.
+ * @param n The number of elements in the array (non-negative).
  * @return int The sum of the array elements.
  */
 int sumArray(int v[], int n)
 {
-    if (n == 0)
+    if (n <= 0)
     {
         return 0;
     }
@@ -73,8 +73,8 @@ int sumArray(int v[], int n)
 
 /**
  * @brief Calculate the summation of all integers from 1 to n using recursion.
- * 
- * @param n The upper limit of the summation.
+ *
+ * @param n The upper limit of the summation (non-negative).
  * @return int The summation result.
  */
 int summation(unsigned int n)
@@ -89,9 +89,9 @@ int summation(unsigned int n)
 
 /**
  * @brief Raise a number to a power using recursion
- * 
+ *
  * @param k The base number.
- * @param n The exponent.
+ * @param n The exponent (non-negative).
  * @return unsigned int The result of k raised to the power of n.
  */
 unsigned int raisedTo(unsigned int k, unsigned int n)
@@ -106,7 +106,7 @@ unsigned int raisedTo(unsigned int k, unsigned int n)
 
 /**
  * @brief Helper function for array reversal using recursion.
- * 
+ *
  * @param v The array to be reversed.
  * @param start The starting index for the reversal.
  * @param end The ending index for the reversal.
@@ -127,27 +127,30 @@ void arrayReversalRecursive(int v[], int start, int end)
 
 /**
  * @brief Reverse the elements of an array.
- * 
+ *
  * @param v The array to be reversed.
- * @param n The number of elements in the array.
+ * @param n The number of elements in the array (non-negative).
  */
 void arrayReversal(int v[], int n)
 {
-    return arrayReversalRecursive(v, 0, n - 1);
+    if (n > 0)
+    {
+        return arrayReversalRecursive(v, 0, n - 1);
+    }
 }
 
 /**
  * @brief Count the ocurrences of a digit in a number using recursion.
- * 
+ *
  * @param num The number to be checked.
- * @param digit The digit to count.
+ * @param digit The digit to count (0-9).
  * @return int The number of occurrences of the digit.
  */
 int occurrences(unsigned int num, int digit)
 {
     if (num == 0)
     {
-        return 0;
+        return (digit == 0) ? 1 : 0;
     }
 
     int last_digit = num % 10;
@@ -158,7 +161,7 @@ int occurrences(unsigned int num, int digit)
 
 /**
  * @brief Calculate the greatest commom divisor (GCD) of two numbers using recursion.
- * 
+ *
  * @param x The first number.
  * @param y The second number.
  * @return int The GCD of the two numbers.
@@ -172,13 +175,12 @@ int gcd(int x, int y)
     return gcd(y, x % y);
 }
 
-
 /**
  * @brief Multiply two numbers using recursion
- * 
+ *
  * @param n1 The first number.
  * @param n2 The second number.
- * 
+ *
  * @return int The product of the two numbers.
  */
 int multip_rec(unsigned int n1, unsigned int n2)
@@ -198,7 +200,7 @@ int multip_rec(unsigned int n1, unsigned int n2)
 
 /**
  * @brief Helper function for searching an element in an array using recursion.
- * 
+ *
  * @param v The array to search.
  * @param index The current index to check.
  * @param num The number to search for.
@@ -221,11 +223,11 @@ int arraySearchRecursive(int v[], int index, int num)
 
 /**
  * @brief Search for a number in an array.
- * 
+ *
  * @param v The array to search.
  * @param n The number of elements in the array.
  * @param num The number to search for.
- * @return int The index of the number if found,  -1 otherwise.
+ * @return int The index of the number if found, -1 otherwise.
  */
 int arraySearch(int v[], int n, int num)
 {
@@ -234,7 +236,7 @@ int arraySearch(int v[], int n, int num)
 
 /**
  * @brief Calculate the sum of the bits in the binary representation of a number using recursion.
- * 
+ *
  * @param num The number to be processed.
  * @return int The sum of the bits.
  */

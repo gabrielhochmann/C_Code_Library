@@ -5,6 +5,7 @@ This repository contais exercises and projects completed in the C programming la
 ## Directory Structure
 
 - **University**: Main folder for academic-related exercises and projects.
+![Unioste Logo](./assets/logo_unioeste.png)
   - **computation_1**: Contains exercises from the Computation 1 course.
   - **computation_2**: Contains exercises on recursive functions in C. Includes implementation and header files.
   - **data_structures_and_algorithms**: Contains exercises and projects related to data structures and algorithms. Includes function and header files.

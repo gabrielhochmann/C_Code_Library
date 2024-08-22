@@ -1,16 +1,16 @@
 /*
- ========================================================================================
- Author      : Arkzesru (Gabriel Hochmann Alves);
+ ============================================================================================
+ Author      : Gabriel Hochmann;
  Date        : July 02, 2024;
- Name        : Recursive Operations Header;
- Source      : (20240627, Aula2-3.pptx) - Teresinha Arnauts Hachisuca
+ File        : recursive_functions.h;
  Description : A C header file that declares functions for mathematical calculations,
                array manipulation, digit and bit manipulation, all using recursion.
- ========================================================================================
+ Source      : Based on material from (20240627, Aula2-3.pptx) - Teresinha Arnauts Hachisuca
+ ============================================================================================
  */
 
-#ifndef RECURSIVEFUNCTIONS_H
-#define RECURSIVEFUNCTIONS_H
+#ifndef RECURSIVE_FUNCTIONS_H
+#define RECURSIVE_FUNCTIONS_H
 
 // Functions for mathematical calculations
 unsigned int fibonacci(unsigned int num);
@@ -30,4 +30,4 @@ int sumBits(unsigned int num);
 int occurrences(unsigned int num, int digit);
 
 
-#endif // RECURSIVEFUNCTIONS_H
+#endif // RECURSIVE_FUNCTIONS_H
