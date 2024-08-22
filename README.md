@@ -4,12 +4,12 @@ This repository contais exercises and projects completed in the C programming la
 
 ## Directory Structure
 
-- **University**: Main folder for academic-related exercises and projects.
+- **[University](University)**: Main folder for academic-related exercises and projects.
 ![Unioste Logo](./assets/logo_unioeste.png)
-  - **computation_1**: Contains exercises from the Computation 1 course.
-  - **computation_2**: Contains exercises on recursive functions in C. Includes implementation and header files.
-  - **data_structures_and_algorithms**: Contains exercises and projects related to data structures and algorithms. Includes function and header files.
-  - **Introduction_to_Computing**: Contains exercises and projects from the Introduction to Computing course.
+  - **[computation_1](University/computation_1)**: Contains exercises from the Computation 1 course.
+  - **[computation_2](University/computation_2)**: Contains exercises on recursive functions in C. Includes implementation and header files.
+  - **[data_structures_and_algorithms](University/data_structures_and_algorithms)**: Contains exercises and projects related to data structures and algorithms. Includes function and header files.
+  - **[Introduction_to_Computing](University/Introduction_to_Computing)**: Contains exercises and projects from the Introduction to Computing course.
 
 ## Usage Instructions
 
