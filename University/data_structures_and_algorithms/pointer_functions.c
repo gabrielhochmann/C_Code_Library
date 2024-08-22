@@ -2,7 +2,7 @@
  ========================================================================================
  Author      : Arkzesru (Gabriel Hochmann Alves);
  Date        : August 20, 2024;
- Name        : Pointer Functions Implementation;
+ File        : pointer_functions.c
  Source      : Pointers in C (List of Exercises) - Professor Rômulo Silva;
  Description : C source file that implements functions for various pointer operations,
                including statical calculations, vector copying, cloning, and comparison.

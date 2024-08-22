@@ -2,7 +2,7 @@
  ========================================================================================
  Author      : Arkzesru (Gabriel Hochmann Alves)
  Date        : August 20, 2024
- Name        : Pointer Functions
+ File        : pointer_functions.h
  Source      : Pointers in C (List of Exercises) - Professor Rômulo Silva
  Description : A C header file that declares several functions for handling arrays and
                performing operations using pointers.

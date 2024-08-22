@@ -1,8 +1,8 @@
 /*
  ========================================================================================
- Author      : Arkzesru (Gabriel Hochmann Alves);
+ Author      : Gabriel Hochmann;
  Date        : July 10, 2024;
- Name        : Recursive Functions Implementation;
+ File        : recursive_functions.c
  Source      : Recursion (List 1) - Professor Rômulo Silva;
  Description : A C source file that implements recursive functions.
  ========================================================================================
@@ -30,8 +30,8 @@ void printNumbersDescending(int num)
     if (num > 1)
     {
         printf("%d\n", num - 1);
-        printNumbersDescending(num - 1);
     }
+    printNumbersDescending(num - 1);
 }
 
 // Function to calculate summation recursively
@@ -89,7 +89,24 @@ int exponentialFactorial(unsigned int n)
     return power(n, exponentialFactorial(n - 1));
 }
 
-int catalanNumber_1(unsigned int n) // Most inefficient way, correctly computes up to n = 6.
+/*
+=================================================================================================
+Catalan Number Implementations:
+=================================================================================================
+*/
+
+/**
+ * catalanNumber_1:
+ * This implementation computes the nth Catalan number using the direct formula:
+ * C(n) = (2n!) / ((n+1)! * n!)
+ * 
+ * Efficiency: This method is straightforward but limited by the factorial calculation.
+ * For large n, calculating factorials can result in overflow and is computationally expensive
+ * due to the large values involved.
+ * 
+ * It is accurate only for small values of n (up to n = 6).
+ */
+int catalanNumber_1(unsigned int n)
 {
     if (n == 0)
     {
@@ -99,6 +116,18 @@ int catalanNumber_1(unsigned int n) // Most inefficient way, correctly computes 
     return (factorial(2 * n)) / (factorial(n + 1) * factorial(n));
 }
 
+/**
+ * catalanNumber_2:
+ * This implementation computes the nth Catalan number using dynamic programming.
+ * It recursively computes the sum of products of previously computed Catalan numbers.
+ * 
+ * Efficiency: This method is computationally expansive because it involves a double
+ * recursive call that calculates the Catalan numbers for all values less than n.
+ * It avoids factorial overflow issues but is inefficient for large values of n due to
+ * repeated calculation.
+ * 
+ * It correctly computes up to n = 19.
+ */
 int catalanNumber_2(unsigned int n) // Most efficient way, correctly computes up to n = 19
 {
     if (n == 0)
@@ -114,6 +143,25 @@ int catalanNumber_2(unsigned int n) // Most efficient way, correctly computes up
     return sum;
 }
 
+/**
+ * catalanNumber_3:
+ * This implementation computes the nth Catalan number using the recursive formula:
+ * C(n) = (2*(2n-1)*C(n-1)) / (n+1)
+ * 
+ * Time Complexity: O(n)
+ * Space Complexity: O(n) (due to recursion stack)
+ * 
+ * Efficiency: This method is theoretically faster than the dynamic programming approach
+ * (catalanNumber_2) because it has a lower time complexity (O(n) vs. O(n²)). However,
+ * due to the accumulation of rounding errors and integer overflow during the multiplication
+ * and division operations, it is less precise for larger values of n.
+ * 
+ * It correctly computes up to n = 17.
+ * 
+ * In summary, while this method is faster for small values of n, it sacrifices precision
+ * for larger n compared to the recursive dynamic programming method (catalanNumber_2).
+ */
+
 int catalanNumber_3(unsigned int n) // So so way, correctly computes up to n = 17
 {
     if (n == 0)
@@ -125,7 +173,7 @@ int catalanNumber_3(unsigned int n) // So so way, correctly computes up to n = 1
 }
 
 // Function to check if a string is palindrome recursively
-int isPalindrome(char *str, int len)
+int isPalindrome(const char *str, int len)
 {
     if (len <= 1)
     {
@@ -187,4 +235,4 @@ int sumDigits(int n)
     }
 
     return (n % 10) + sumDigits(n / 10);
-}
+};
