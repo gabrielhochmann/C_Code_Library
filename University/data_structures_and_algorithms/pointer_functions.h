@@ -1,6 +1,6 @@
 /*
  ========================================================================================
- Author      : Arkzesru (Gabriel Hochmann Alves)
+ Author      : Gabriel Hochmann
  Date        : August 20, 2024
  File        : pointer_functions.h
  Source      : Pointers in C (List of Exercises) - Professor Rômulo Silva

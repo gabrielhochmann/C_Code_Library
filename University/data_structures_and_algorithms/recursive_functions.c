@@ -1,9 +1,9 @@
 /*
  ========================================================================================
- Author      : Gabriel Hochmann;
- Date        : July 10, 2024;
+ Author      : Gabriel Hochmann
+ Date        : July 10, 2024
  File        : recursive_functions.c
- Source      : Recursion (List 1) - Professor Rômulo Silva;
+ Source      : Recursion (List 1) - Professor Rômulo Silva
  Description : A C source file that implements recursive functions.
  ========================================================================================
  */
