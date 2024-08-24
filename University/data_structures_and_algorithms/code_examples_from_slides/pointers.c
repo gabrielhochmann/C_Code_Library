@@ -1,6 +1,6 @@
 /*
  ========================================================================================
- Author      : Gabriel Hochmann Alves
+ Author      : Gabriel Hochmann
  Date        : August 23, 2024
  File        : pointers.c
  Source      : Pointers in C - Professor Rômulo Silva;
